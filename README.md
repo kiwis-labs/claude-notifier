@@ -137,3 +137,7 @@ rebuild it from the current desktop app icon:
 ```bash
 bash ~/.claude/claude-notifier/extract-icon.sh
 ```
+
+## License
+
+MIT. See [LICENSE](LICENSE).
