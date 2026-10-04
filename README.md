@@ -12,7 +12,7 @@ Paste this into Claude Code:
 
 ```text
 Install Claude Notifier for me with Homebrew:
-`brew tap keyurgovrani/tap`, `brew trust keyurgovrani/tap`,
+`brew tap kiwis-labs/tap`, `brew trust kiwis-labs/tap`,
 `brew install claude-notifier`, then `claude-notifier install`.
 The installer sends a "Claude Notifier installed ✓" test notification.
 Ask me whether I saw it. If I did not, walk me through
@@ -24,8 +24,8 @@ System Settings → Notifications → Claude Notifier to turn on Allow Notificat
 With Homebrew:
 
 ```bash
-brew tap keyurgovrani/tap
-brew trust keyurgovrani/tap
+brew tap kiwis-labs/tap
+brew trust kiwis-labs/tap
 brew install claude-notifier
 claude-notifier install
 ```
@@ -37,14 +37,14 @@ there. Brew cannot write to `~/.claude` or `~/Applications`, so
 With git:
 
 ```bash
-git clone https://github.com/keyurgovrani/claude-notifier ~/.claude/claude-notifier
+git clone https://github.com/kiwis-labs/claude-notifier ~/.claude/claude-notifier
 bash ~/.claude/claude-notifier/install.sh
 ```
 
 With the zip from the latest release:
 
 ```bash
-curl -fsSL -o /tmp/claude-notifier.zip https://github.com/keyurgovrani/claude-notifier/releases/latest/download/claude-notifier.zip
+curl -fsSL -o /tmp/claude-notifier.zip https://github.com/kiwis-labs/claude-notifier/releases/latest/download/claude-notifier.zip
 unzip -o /tmp/claude-notifier.zip -d ~/.claude && bash ~/.claude/claude-notifier/install.sh
 ```
 
