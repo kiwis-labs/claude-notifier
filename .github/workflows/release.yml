@@ -24,12 +24,13 @@ jobs:
           fetch-depth: 0
       # The claude-notifier/ prefix lets `unzip -d ~/.claude` land in ~/.claude/claude-notifier.
       - run: git archive --format=zip --prefix=claude-notifier/ -o claude-notifier.zip "$TAG"
+      - run: bash .github/release-notes.sh "$TAG" > notes.md
       - run: |
           if gh release view "$TAG" >/dev/null 2>&1; then
             gh release upload "$TAG" claude-notifier.zip --clobber
-            gh release edit "$TAG" --draft=false --latest
+            gh release edit "$TAG" --draft=false --latest --notes-file notes.md
           else
-            gh release create "$TAG" claude-notifier.zip --title "$TAG" --generate-notes --latest
+            gh release create "$TAG" claude-notifier.zip --title "$TAG" --notes-file notes.md --latest
           fi
       # Only a tag push moves the formula, so a manual re-run of an old tag never downgrades brew users.
       # TAP_DEPLOY_KEY is the private half of a write deploy key on kiwis-labs/homebrew-tap only.
